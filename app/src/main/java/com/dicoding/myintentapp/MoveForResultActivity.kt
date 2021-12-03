@@ -38,6 +38,11 @@ class MoveForResultActivity : AppCompatActivity(), View.OnClickListener {
                     R.id.rb_200 -> value = 200
                 }
 
+                /*
+                Intent ini digunakan untuk mengirimkan kembali ke activity induk
+                Perhatikan bahwa kita mencantumkan RESULT_CODE ke dalam metode setResult
+                 */
+
                 val resultIntent = Intent()
                 resultIntent.putExtra(EXTRA_SELECTED_VALUE, value)
                 setResult(RESULT_CODE, resultIntent)

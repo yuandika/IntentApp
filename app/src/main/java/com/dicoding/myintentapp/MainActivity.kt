@@ -47,17 +47,27 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id) {
             R.id.btn_move_activity -> {
+                /*
+                Intent untuk memulai activity baru
+                 */
                 val moveIntent = Intent(this@MainActivity, MoveActivity::class.java)
                 startActivity(moveIntent)
             }
 
             R.id.btn_move_activity_data -> {
+                /*
+                Intent untuk mengirimkan data ke activity lain
+                 */
                 val moveWithDataIntent = Intent(this@MainActivity, MoveWithDataActivity::class.java)
                 moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "Dicoding Academy")
                 moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 5)
                 startActivity(moveWithDataIntent)
             }
+
             R.id.btn_move_activity_object -> {
+                /*
+                Intent untuk mengirimkan object ke activity lain, perlu diingat bahwa object Person adalah parcelable
+                 */
                 val person = Person(
                     "Dicoding Academy",
                     5,
@@ -68,12 +78,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 moveWithObjectIntent.putExtra(MoveDataWithObjectActivity.EXTRA_PERSON, person)
                 startActivity(moveWithObjectIntent)
             }
+
             R.id.btn_dial_number -> {
+                /*
+                Intent action untuk menjalankan action dial
+                 */
                 val phoneNumber = "082127411211"
                 val dialPhoneIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber"))
                 startActivity(dialPhoneIntent)
             }
+
             R.id.btn_move_for_result -> {
+                /*
+                Intent for result bermanfaat ketika kita ingin mendapatkan nilai balikan dari activity lainnya
+                Perhatikan bahwa kita mengirimkan intent beserta REQUEST_CODE
+                 */
                 val moveForResultIntent = Intent(this@MainActivity, MoveForResultActivity::class.java)
                 resultLauncher.launch(moveForResultIntent)
             }

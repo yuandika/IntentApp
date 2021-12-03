@@ -15,6 +15,9 @@ class MoveDataWithObjectActivity : AppCompatActivity() {
 
         val tvObject: TextView = findViewById(R.id.tv_object_received)
 
+        /*
+        Object parcelable bisa kita dapatkan dengan memanggil getParcelableExtra
+         */
         val person = intent.getParcelableExtra<Person>(EXTRA_PERSON) as Person
         val text = "Name: ${person.name.toString()}, \n" +
                 "Email: ${person.email} \n" +

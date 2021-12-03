@@ -16,6 +16,9 @@ class MoveWithDataActivity : AppCompatActivity() {
 
         val tvDataActivity: TextView = findViewById(R.id.tv_data_received)
 
+        /*
+        Data dari intent bisa kita dapatkan dengan memanggil get dan disesuaikan dengan tipe datanya
+         */
         val name = intent.getStringExtra(EXTRA_NAME)
         val age = intent.getIntExtra(EXTRA_AGE, 0)
 
